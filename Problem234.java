@@ -11,13 +11,17 @@
 class Solution {
     public boolean isPalindrome(ListNode head) {
         ListNode current = head;
-        StringBuilder original = new StringBuilder();
-        StringBuilder reverse = new StringBuilder();
+        byte original[] = new byte[100000];
+        int count = 0;
         do{
-            original.append(current.val);
-            reverse.insert(0,current.val);
             current = current.next;
+            count++;
         }while(current != null);
-        return original.toString().equals(reverse.toString());
+        
+        for(int i =0, k=count-1; i < (count/2) ;i++,k--){
+            if(original[i] != original[k]) return false;
+        }
+        
+        return true;
     }
 }
