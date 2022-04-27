@@ -1,0 +1,62 @@
+class Solution {
+    public String intToRoman(int num) {
+        String roman = "";
+        while(num > 999){
+            roman += "M";
+            num-=1000;
+        }
+        if(num > 899){
+            roman += "CM";
+            num-=900;
+        }
+        while(num > 499){
+            roman += "D";
+            num-=500;
+        }
+        if(num > 399){
+            roman += "CD";
+            num-=400;
+        }
+        while(num > 99){
+            roman += "C";
+            num-=100;
+        }
+        if(num > 89){
+            roman += "XC";
+            num-=90;
+        }
+        if(num > 49){
+            roman += "L";
+            num-=50;
+        }
+        if(num > 39){
+            roman += "XL";
+            num-=40;
+        }
+        while(num > 9){
+            roman += "X";
+            num-=10;
+        }
+        
+        if(num > 8){
+            roman += "IX";
+            num-=9;
+        }
+        if(num > 4){
+            roman += "V";
+            num-=5;
+        }
+        
+        if(num > 3){
+            roman += "IV";
+            num-=4;
+        }
+        while(num > 0){
+            roman += "I";
+            num-=1;
+        }
+        
+        return roman;
+        
+    }
+}
